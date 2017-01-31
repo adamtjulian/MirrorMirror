@@ -98,5 +98,7 @@ $app->group(['namespace' => 'App\Http\Controllers'], function ($app) {
 
 // Load mirror configuration file
 $app->configure('mirror');
+//load admin file
+$app->configure('admin');
 
 return $app;

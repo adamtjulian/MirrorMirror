@@ -35,7 +35,7 @@
             
         </p>
         <script type="text/javascript">
-            var greetings = {!! json_encode($greetings) !!};
+            var greetings = {!! json_encode($greetings[0]) !!};
             var city = "{!! $city !!}";
             var state = "{!! $state !!}"
             var woeid = {!! $woeid !!};
@@ -45,16 +45,21 @@
         <script type="text/javascript">
 
             function updateCompliment() {
-                var greeting = greetings[Math.floor(Math.random()*greetings.length)];
+                var variable = Math.floor(Math.random()*greetings.length);
+                var greeting = greetings[variable];
 
                 $('#greeting').text(greeting);
             }
 
             updateCompliment();
+            console.log(Date());
+            setInterval(function() {
+                updateCompliment();
+            }, 20000);
 
             setTimeout(function() {
-                updateCompliment();
-            }, 30000);
+                location.reload();
+            }, 300000);
 
         </script>
 <!--         <script type="text/javascript">

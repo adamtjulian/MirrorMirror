@@ -183,5 +183,5 @@
         };
         $(document).ready(function() {
             updateWeather();
-            setInterval(updateWeather, 30000);
+            setInterval(updateWeather, 60000);
         });

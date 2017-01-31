@@ -18,8 +18,18 @@ $app->get('/', function () use ($app) {
    		'greetings' => config('mirror.greetings'),
    		'city' => env('CITY'),
    		'state' => env('STATE'),
-   		'woeid' => env('WOEID'),
+   		'woeid' => env('WOEID')
     ]);
+});
+
+$app->get('/admin', function () use ($app) {
+
+    return view('admin', ['test'=>'testing']);
+});
+
+$app->get('/info', function () use ($app) {
+
+    return view('info');
 });
 
 $app->get('/version', function() use ($app) {
